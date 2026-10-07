@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "调试后端 (Spring Boot)",
+      "request": "launch",
+      "mainClass": "com.enterprise.admin.AdminApplication",
+      "projectName": "admin",
+      "args": "--server.port=8080",
+      "vmArgs": "-Dfile.encoding=UTF-8",
+      "env": {
+        "JAVA_HOME": "C:\\Program Files\\AdoptOpenJDK\\jdk-17"
+      },
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "chrome",
+      "name": "调试前端 (Chrome)",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend",
+      "preLaunchTask": "启动前端 (Vite Dev)"
+    }
+  ]
+}

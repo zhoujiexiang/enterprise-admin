@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "redhat.java",
+    "vscjava.vscode-maven",
+    "vscjava.vscode-spring-boot-dashboard",
+    "vscjava.vscode-spring-initializr",
+    "Vue.volar",
+    "msjsdiag.debugger-for-chrome"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "启动前端 (Vite Dev)",
+      "type": "npm",
+      "script": "dev",
+      "path": "frontend",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      }
+    },
+    {
+      "label": "启动后端 (Spring Boot)",
+      "type": "shell",
+      "command": "java",
+      "args": [
+        "-jar",
+        "backend/target/admin-1.0.0.jar",
+        "--server.port=8080"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": { "regexp": "^$" },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Started AdminApplication",
+          "endsPattern": "Started AdminApplication"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "dev"
+      }
+    },
+    {
+      "label": "打包后端 (Maven package)",
+      "type": "shell",
+      "command": "mvn",
+      "args": ["-o", "clean", "package", "-DskipTests"],
+      "options": {
+        "cwd": "${workspaceFolder}/backend",
+        "env": {
+          "JAVA_HOME": "C:\\Program Files\\AdoptOpenJDK\\jdk-17"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}
